@@ -52,7 +52,7 @@ $f3 -> route('GET /pets/order', function() {
 );
 
 $f3 -> route('POST /pets/order2', function($f3,$params) {
-    $_SESSION['first'] = $f3->get('first');
+    $_SESSION['first'] = $f3->post('first');
     $template = new Template();
     echo $template->render('views/form2.html');
 }
