@@ -49,6 +49,11 @@ $f3 -> route('GET /pets/order', function() {
 }
 );
 
+$f3 -> route('POST /pets/order2', function() {
+    $template = new Template();
+    echo $template->render('views/form2.html');
+}
+);
 
 
 //Run Fat-Free Framework
