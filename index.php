@@ -32,9 +32,10 @@ $f3 -> route('GET /pets/show/@pet', function($f3, $params) {
     switch($params['pet']) {
         case 'cat':
             echo 'Cat!'; break;
-            echo '<img src="smiley.gif" alt="cat" height="42" width="42">';
+            echo '<img src="https://static.pexels.com/photos/127028/pexels-photo-127028.jpeg" alt="cat" height="42" width="42">';
         case 'bigcat':
             echo 'BIGCAT!'; break;
+            echo '<img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr06/4/16/enhanced-10419-1396642697-10.jpg" alt="cat" height="42" width="42">';
         case 'notcat':
             echo 'Not a cat!'; break;
         //404 error default
