@@ -46,23 +46,23 @@ $f3 -> route('GET /pets/show/@pet', function($f3, $params) {
 }
 );
 
-$f3 -> route('GET /pets/order', function() {
+$f3 -> route('GET /order', function() {
     $template = new Template();
     echo $template->render('views/form1.html');
 }
 );
 
-$f3 -> route('POST /pets/order2', function($f3,$params) {
+$f3 -> route('POST /order2', function($f3,$params) {
     $f3->set('pet',$params['pet']);
-    $_SESSION['pet'] = $f3->post('pet');
+    $_SESSION['pet'] = $f3->get('pet');
     $template = new Template();
     echo $template->render('views/form2.html');
 }
 );
 
-$f3 -> route('POST /pets/results', function($f3,$params) {
+$f3 -> route('POST /results', function($f3,$params) {
     $f3 -> set('color',$params['color']);
-    $_SESSION['color'] = $f3->post('color');
+    $_SESSION['color'] = $f3->get('color');
     $template = new Template();
     echo $template->render('views/results.html');
 });
