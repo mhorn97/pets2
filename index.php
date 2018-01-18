@@ -8,6 +8,8 @@
 
 require_once ('vendor/autoload.php');
 
+session_start();
+
 // Turn on error reporting
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
@@ -51,7 +53,8 @@ $f3 -> route('GET /pets/order', function() {
 }
 );
 
-$f3 -> route('POST /pets/order2', function() {
+$f3 -> route('POST /pets/order2', function($f3,$params) {
+    $_SESSION['first'] = $f3->get('first');
     $template = new Template();
     echo $template->render('views/form2.html');
 }
