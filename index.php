@@ -19,6 +19,8 @@ $f3->set('DEBUG', 3);
 
 $f3 -> route('GET /', function() {
     echo "<h1>Routing Demo</h1>";
+    $template = new Template();
+    echo $template->render('views/home.html');
 
 }
 );
@@ -43,7 +45,7 @@ $f3 -> route('GET /pets/show/@pet', function($f3, $params) {
 
 $f3 -> route('GET /pets/order', function() {
     $template = new Template();
-    echo $template->render('views/home.html');
+    echo $template->render('views/form1.html');
 }
 );
 
