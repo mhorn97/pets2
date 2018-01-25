@@ -15,6 +15,7 @@ ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
 $f3 = Base::instance();
+$f3->set('colors',array('pink','green','blue'));
 
 //Set debug level
 $f3->set('DEBUG', 3);
@@ -70,6 +71,21 @@ $f3 -> route('POST /results', function($f3) {
 
     $template = new Template();
     echo $template->render('views/results.html');
+});
+
+$f3->route('GET|POST /new-pet', function($f3)
+{
+    if(isset($_POST['submit']))
+    {
+        $color = $_POST['pet-color'];
+
+        include('mode/validate.php');
+    }
+    $f3->set('color',$color);
+   // $f3->set('type',$type);
+    //$f3->set('name',$name);
+    //$f3->set('success',$success);
+    //$f3->set('errors',$errors);
 });
 
 

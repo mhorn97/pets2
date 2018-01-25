@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Thanks, your <?= ($pet) ?> is the color of <?= ($color) ?></h1>
+</body>
+</html>
