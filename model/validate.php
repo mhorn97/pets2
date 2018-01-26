@@ -32,3 +32,7 @@ else
 {
     $success=sizeOf($errors) == 0;
 }
+
+if(!validString($string)) {
+    $errors['name'] = "Please enter a valid name and type";
+}
