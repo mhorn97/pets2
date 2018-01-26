@@ -13,7 +13,7 @@
 
     Pet Type <input type="text" name="type">
     <br>
-    <button type="submit" name="submit" value="Submit">SUBMIT</button>
+    <submit type="submit" name="submit" value="Submit"></submit>
 </form>
 <!-- if submission was successful, display a confirmation -->
 <?php if ($success): ?>
