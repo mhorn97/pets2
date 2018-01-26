@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New-Pet</title>
+    <title>Title</title>
 </head>
 <body>
 
@@ -11,18 +11,35 @@
 <form method="post" action="#">
     Pet Name<input type="text" name="name">
     Pet Color:
-    <select class = "form-control" name="pet-color" id="pet-color">
-        <option>--Select--</option>
-        <repeat group="{{@colors}}" value="{{@colorOption}}">
-            <option {{@colorOption}}></option>
-        </repeat>
+    <option>--Select--</option>
+    <repeat group="{{@colors}}" value="{{@colorOption}}">
+        <option {{@colorOption}}></option>
+    </repeat>
     </select>
 
     Pet Type <input type="text" name="type">
     <br>
     <button type="submit" value="Submit"></button>
 </form>
-
-
+<!-- if submission was successful, display a confirmation -->
+<check if="{{ @success }}">
+    <h2>Thank you for your order fo a {{ @type }}!</h2>
+</check>
+<!-- color -->
+<label class="col-sm-1 control-label"
+       for="pet-color">Pet Color</label>
+<div class="col-sm-3"></div>
+<check if="{{ @errors['color'] }}">
+    <p>{{ @errors['color'] }}</p>
+</check>
+<select class="form-control" name="pet-color" id="pet-color">
+    <option>--Select--</option>
+    <repeat group="{{ @colors }}" value="{{ @colorOption }}">
+        <option>
+            <check if="{{ @colorOption == @color }}">selected</check>
+            {{ @colorOption }}
+        </option>
+    </repeat>
+</select>
 </body>
 </html>

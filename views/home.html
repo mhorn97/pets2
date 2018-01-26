@@ -9,6 +9,7 @@
 
 
 <a href="./order">Order a Pet</a>
+<a href="./new-pet">New Pet</a>
 
 
 
