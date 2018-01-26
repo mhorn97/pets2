@@ -83,7 +83,7 @@ $f3->route('GET|POST /new-pet', function($f3)
         $success = $_POST['success'];
         $errors = $_POST['errors'];
 
-        include('mode/validate.php');
+        include('model/validate.php');
     }
     $f3->set('color',$color);
     $f3->set('type',$type);
@@ -92,6 +92,8 @@ $f3->route('GET|POST /new-pet', function($f3)
     $f3->set('errors',$errors);
 });
 
+$template = new Template();
+echo $template->render('views/results.html');
 
 //Run Fat-Free Framework
 $f3->run();
