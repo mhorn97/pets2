@@ -23,16 +23,10 @@ function validString($string){
 }
 
 $errors = array();
+$success = false;
 
-if(!validColor($color))
-{
-    $errors['color']="Please enter a valid color.";
-}
-else
-{
-    $success=sizeOf($errors) == 0;
-}
-
-if(!validString($string)) {
-    $errors['name'] = "Please enter a valid name and type";
+if(!validColor($color) || !validString($name) || (!validString($type))) {
+    $errors['name'] = "Please enter a valid name, type, and color";
+} else {
+    $success = true;
 }

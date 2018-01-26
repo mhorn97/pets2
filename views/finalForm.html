@@ -17,8 +17,11 @@
     <label class="col-sm-1 control-label"
            for="pet-color">Pet Color</label>
     <div class="col-sm-3"></div>
-    <check if="{{ @errors['color'] }}">
+    <check if="{{ isset(@errors['color']) }}">
         <p>{{ @errors['color'] }}</p>
+    </check>
+    <check if="{{ isset(@errors['name']) }}">
+        <p>{{ @errors['name'] }}</p>
     </check>
     <select class="form-control" name="pet-color" id="pet-color">
         <option>--Select--</option>
