@@ -93,7 +93,7 @@ $f3->route('GET|POST /new-pet', function($f3)
 });
 
 $template = new Template();
-echo $template->render('views/results.html');
+echo $template->render('views/finalForm.html');
 
 //Run Fat-Free Framework
 $f3->run();
