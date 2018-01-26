@@ -16,24 +16,25 @@
     <button type="submit" name="submit" value="Submit">SUBMIT</button>
 </form>
 <!-- if submission was successful, display a confirmation -->
-<check if="{{ @success }}">
-    <h2>Thank you for your order fo a {{ @type }}!</h2>
-</check>
+<?php if ($success): ?>
+    <h2>Thank you for your order fo a <?= ($type) ?>!</h2>
+<?php endif; ?>
 <!-- color -->
 <label class="col-sm-1 control-label"
        for="pet-color">Pet Color</label>
 <div class="col-sm-3"></div>
-<check if="{{ @errors['color'] }}">
-    <p>{{ @errors['color'] }}</p>
-</check>
+<?php if ($errors['color']): ?>
+    <p><?= ($errors['color']) ?></p>
+<?php endif; ?>
 <select class="form-control" name="pet-color" id="pet-color">
     <option>--Select--</option>
-    <repeat group="{{ @colors }}" value="{{ @colorOption }}">
+    <?php foreach (($colors?:[]) as $colorOption): ?>
         <option>
-            <check if="{{ @colorOption == @color }}">selected</check>
-            {{ @colorOption }}
+            <?php if ($colorOption == $color): ?>selected<?php endif; ?>
+            <?= ($colorOption)."
+" ?>
         </option>
-    </repeat>
+    <?php endforeach; ?>
 </select>
 </body>
 </html>
